@@ -15,7 +15,7 @@ echo "define ( 'WP_HOME', 'http://$IP_BALANCER' );" >> /var/www/html/wp-config.p
 sed -i 's/nombredetubasededatos/wordpress/' /var/www/html/wp-config.php
 sed -i 's/nombredeusuario/wpuser/' /var/www/html/wp-config.php
 sed -i 's/contraseña/wppass/' /var/www/html/wp-config.php
-sed -i 's/localhost/54.91.191.73/' /var/www/html/wp-config.php
+sed -i 's/localhost/52.203.155.108/' /var/www/html/wp-config.php
 
 
 #Instauramos las security keys
@@ -40,7 +40,7 @@ systemctl start nfs-kernel-server
 
 # Quitamos pertenencias a la carpeta a compartir
 chown nobody:nogroup /var/www/html
-chown www-data:www-data /var/www/html/wp-admin/ /var/www/html/wp-content/ /var/www/html/wp-include/ -R
+chown www-data:www-data /var/www/html/wp-admin/ /var/www/html/wp-content/ /var/www/html/wp-includes/ -R
 
 # Editamos el fichero de archivos compartidos
 echo "/var/www/html     $IP_SLAVE(rw,sync,no_root_squash,no_subtree_check)" > /etc/exports
